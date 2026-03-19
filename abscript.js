@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 //Estudiant A: Funció logTerminal(missatge, tipus): Crear una funció que rebi un text i el tipus (èxit, error o normal) i l'imprimeixi a la zona de terminal del HTML amb un efecte de "línia de comanda".
-//xeic quin pal deumeu, això no està pagao
 
 function logTerminal(missatge, tipus = "normal") {
     const terminal = document.getElementById("terminal");
@@ -35,3 +34,4 @@ function logTerminal(missatge, tipus = "normal") {
     linea.scrollTop = terminal.scrollHeight
 
 }
+//xeic quin pal deumeu, això no està pagao
