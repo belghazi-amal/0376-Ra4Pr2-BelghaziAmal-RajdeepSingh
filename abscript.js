@@ -31,22 +31,40 @@ function logTerminal(missatge, tipus = "normal") {
     }
 
     terminal.appendChild(linea);
-    linea.scrollTop = terminal.scrollHeight
+    terminal.scrollTop = terminal.scrollHeight
 
 }
+//xeic quin pal deumeu, això no està pagao
+
+//Estudiant A: Control de Rondes: Actualitzar el comptador visual de rondes restants a cada intent.
+//me quiero ir a casa...
+
+let rondesRestants = 5;
+
+function actualitzarRondes() {
+    rondesRestants--;
+    
+    const span = document.getElementById("rondes-restants");
+    span.textContent = rondesRestants;
+
+    if (rondesRestants <= 0) {
+        logTerminal("FI DE PARTIDA", "error");
+    }
+}
+
 //xeic quin pal deumeu, això no està pagao
 
 //Estudiant A: Gestor d'Esdeveniments: Escoltar el clic del botó "Executar Codi", recollir els valors dels 4 selects i cridar a la lògica de comparació.
 //bueno, anem a fer a això, lo veo complicao pero nem fent
 
-document.getElementById(btn-enviar).addEventListener("click", () => {
+document.getElementById("btn-enviar").addEventListener("click", () => {
     const selects = document.querySelectorAll(".code-input");
 
     const intent = [];
 
     selects.forEach(select => {
         intent.push(parseInt(select.value));
-    }):
+    });
 
     logTerminal(`Intent: ${intent.join(" ")}`);
 
@@ -57,5 +75,6 @@ document.getElementById(btn-enviar).addEventListener("click", () => {
         logTerminal("Engine no carregat", "error");
     }
 
-    
-})
+    actualitzarRondes();
+
+});
