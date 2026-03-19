@@ -24,7 +24,12 @@ function logTerminal(missatge, tipus = "normal") {
     linea.textContent = `> ${missatge}`;
 
     linea.classList.add("line");
-    linea.classList.add(tipus);
+
+    if (tipus === "error") {
+        linea.classList.add("error");
+    } else if (tipus === "success") {
+            linea.classList.add("success");
+    }
 
     terminal.appendChild(linea);
     linea.scrollTop = terminal.scrollHeight
