@@ -35,3 +35,27 @@ function logTerminal(missatge, tipus = "normal") {
 
 }
 //xeic quin pal deumeu, això no està pagao
+
+//Estudiant A: Gestor d'Esdeveniments: Escoltar el clic del botó "Executar Codi", recollir els valors dels 4 selects i cridar a la lògica de comparació.
+//bueno, anem a fer a això, lo veo complicao pero nem fent
+
+document.getElementById(btn-enviar).addEventListener("click", () => {
+    const selects = document.querySelectorAll(".code-input");
+
+    const intent = [];
+
+    selects.forEach(select => {
+        intent.push(parseInt(select.value));
+    }):
+
+    logTerminal(`Intent: ${intent.join(" ")}`);
+
+    if (typeof validarIntent === "function") {
+        const resultat = validarIntent(intent);
+        logTerminal(`Resultat: ${resultat.join(" ")}`);
+    } else {
+        logTerminal("Engine no carregat", "error");
+    }
+
+    
+})
